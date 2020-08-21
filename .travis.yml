@@ -9,8 +9,7 @@ script:
   - docker build -t thanneeruravi22/multi-server ./server
   - docker build -t thanneeruravi22/multi-worker ./worker
   # Log in to the docker CLI
-  #- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker login -u "$DOCKER_ID" -p "$DOCKER_PASSWORD"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Push image to docker hub
   - docker push thanneeruravi22/multi-client
   - docker push thanneeruravi22/multi-nginx
